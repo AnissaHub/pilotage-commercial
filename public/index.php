@@ -25,3 +25,4 @@ $application = new Zend_Application(
 
 // 6. Initialise (bootstrap) puis traite la requête (run)
 $application->bootstrap()->run();
+()
