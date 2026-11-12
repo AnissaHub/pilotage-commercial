@@ -5,21 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pilotage commercial</title>
+
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>Pilotage commercial</h1>
-    </header>
+    <div class="app-container">
 
-    <main>
-        <?php echo $this->layout()->content; ?>
-    </main>
+        <!-- Barre latérale -->
+        <aside class="sidebar">
+            <h2>Bank<span>Business</span></h2>
 
-    <footer>
-        <p>Application de pilotage commercial</p>
-    </footer>
+            <nav>
+                <ul>
+                    <li><a href="#">Tableau de bord</a></li>
+                    <li><a href="#">Portefeuille clients</a></li>
+                    <li><a href="#">Ventes</a></li>
+                    <li><a href="#">Commerciaux</a></li>
+                    <li><a href="#">Objectifs</a></li>
+                    <li><a href="#">Reporting</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenu principal -->
+        <div class="main-content">
+
+            <header class="topbar">
+                <h1>Tableau de bord</h1>
+                <p>Espace de pilotage commercial</p>
+            </header>
+
+            <main>
+                <?php echo $this->layout()->content; ?>
+            </main>
+
+        </div>
+
+    </div>
 
 </body>
 

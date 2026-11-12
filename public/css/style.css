@@ -1,0 +1,75 @@
+/* Réinitialisation */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* Conteneur principal */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Barre latérale */
+.sidebar {
+    width: 250px;
+    background-color: #172b4d;
+    color: white;
+    padding: 25px 20px;
+}
+
+.sidebar h2 {
+    font-size: 21px;
+    margin-bottom: 40px;
+}
+
+.sidebar h2 span {
+    color: #55a6e8;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    color: #dce5f0;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* Contenu principal */
+.main-content {
+    flex: 1;
+}
+
+/* Barre supérieure */
+.topbar {
+    background-color: white;
+    padding: 25px 30px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.topbar h1 {
+    color: #172b4d;
+    font-size: 24px;
+}
+
+.topbar p {
+    color: #718096;
+    margin-top: 8px;
+}
+
+.main-content main {
+    padding: 30px;
+}
