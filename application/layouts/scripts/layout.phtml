@@ -5,39 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pilotage commercial</title>
-
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
+<!-- Bibliothèque Highcharts -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+<!-- Script du tableau de bord -->
+<script src="/js/dashboard.js"></script>
 
 <body>
 
     <div class="app-container">
 
-        <!-- Barre latérale -->
+        <!-- Menu latéral -->
         <aside class="sidebar">
-            <h2>Bank<span>Business</span></h2>
 
-            <nav>
+            <div class="logo">
+                <h2>BankBusiness</h2>
+            </div>
+
+            <nav class="sidebar-nav">
                 <ul>
                     <li><a href="#">Tableau de bord</a></li>
-                    <li><a href="#">Portefeuille clients</a></li>
+                    <li><a href="#">Clients</a></li>
                     <li><a href="#">Ventes</a></li>
                     <li><a href="#">Commerciaux</a></li>
                     <li><a href="#">Objectifs</a></li>
                     <li><a href="#">Reporting</a></li>
                 </ul>
             </nav>
+
         </aside>
 
-        <!-- Contenu principal -->
+        <!-- Zone principale -->
         <div class="main-content">
 
+            <!-- Barre supérieure -->
             <header class="topbar">
                 <h1>Tableau de bord</h1>
-                <p>Espace de pilotage commercial</p>
+                <span>Espace commercial</span>
             </header>
 
-            <main>
+            <!-- Contenu de la page -->
+            <main class="dashboard-content">
                 <?php echo $this->layout()->content; ?>
             </main>
 

@@ -1,60 +1,91 @@
-/* Réinitialisation */
+/* =====================================
+   1. REINITIALISATION
+===================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Style général */
+/* =====================================
+   2. STYLE GENERAL
+===================================== */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f6f9;
+    color: #333;
 }
 
-/* Conteneur principal */
+/* =====================================
+   3. CONTENEUR PRINCIPAL
+===================================== */
 .app-container {
     display: flex;
     min-height: 100vh;
 }
 
-/* Barre latérale */
+/* =====================================
+   4. BARRE LATERALE
+===================================== */
 .sidebar {
     width: 250px;
+    min-height: 100vh;
     background-color: #172b4d;
     color: white;
     padding: 25px 20px;
+    flex-shrink: 0;
 }
 
-.sidebar h2 {
+/* Logo */
+.logo {
+    margin-bottom: 45px;
+}
+
+.logo h2 {
     font-size: 21px;
-    margin-bottom: 40px;
+    font-weight: bold;
+    color: white;
 }
 
-.sidebar h2 span {
-    color: #55a6e8;
-}
-
-.sidebar ul {
+/* Navigation */
+.sidebar-nav ul {
     list-style: none;
 }
 
-.sidebar li {
-    margin-bottom: 20px;
+.sidebar-nav li {
+    margin-bottom: 12px;
 }
 
-.sidebar a {
+.sidebar-nav a {
+    display: block;
     color: #dce5f0;
     text-decoration: none;
     font-size: 15px;
+    padding: 13px 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
 }
 
-/* Contenu principal */
+.sidebar-nav a:hover {
+    background-color: #29466f;
+    color: white;
+}
+
+/* =====================================
+   5. CONTENU PRINCIPAL
+===================================== */
 .main-content {
     flex: 1;
+    min-width: 0;
 }
 
-/* Barre supérieure */
+/* =====================================
+   6. BARRE SUPERIEURE
+===================================== */
 .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: white;
     padding: 25px 30px;
     border-bottom: 1px solid #e5e7eb;
@@ -65,11 +96,142 @@ body {
     font-size: 24px;
 }
 
-.topbar p {
+.topbar span {
     color: #718096;
-    margin-top: 8px;
+    font-size: 14px;
 }
 
-.main-content main {
+/* =====================================
+   7. CONTENU DU DASHBOARD
+===================================== */
+.dashboard-content {
     padding: 30px;
+}
+
+/* =====================================
+   8. EN-TETE DU DASHBOARD
+===================================== */
+.dashboard-header {
+    margin-bottom: 30px;
+}
+
+.dashboard-header h2 {
+    color: #172b4d;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.dashboard-header p {
+    color: #718096;
+    font-size: 14px;
+}
+
+/* =====================================
+   9. GRILLE DES INDICATEURS
+===================================== */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* =====================================
+   10. CARTES DES INDICATEURS
+===================================== */
+.kpi-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #2878b5;
+}
+
+.kpi-card h3 {
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.kpi-value {
+    color: #172b4d;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.kpi-trend {
+    color: #16845b;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* =====================================
+   11. ADAPTATION AUX ECRANS
+===================================== */
+
+/* Tablettes */
+@media (max-width: 992px) {
+    .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Téléphones */
+@media (max-width: 576px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar {
+        padding: 20px;
+    }
+
+    .dashboard-content {
+        padding: 20px;
+    }
+}
+
+/* =====================================
+   12. GRAPHIQUE COMMERCIAL
+===================================== */
+
+.chart-section {
+    background-color: white;
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.chart-header {
+    margin-bottom: 20px;
+}
+
+.chart-header h2 {
+    color: #172b4d;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.chart-header p {
+    color: #718096;
+    font-size: 13px;
+}
+
+#salesChart {
+    width: 100%;
+    height: 350px;
 }
