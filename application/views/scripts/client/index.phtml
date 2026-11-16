@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion des clients</title>
+</head>
+
+<body>
+
+    <h1>Gestion des clients</h1>
+
+    <p>Bienvenue dans le module Clients.</p>
+
+    <h2>Liste des clients</h2>
+
+    <a href="/client/ajouter">Ajouter un client</a>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Téléphone</th>
+            <th>Type client</th>
+            <th>Action</th>
+        </tr>
+
+        <?php foreach ($this->clients as $client): ?>
+            <tr>
+                <td><?= $client['id_client'] ?></td>
+                <td><?= $client['nom'] ?></td>
+                <td><?= $client['prenom'] ?></td>
+                <td><?= $client['email'] ?></td>
+                <td><?= $client['telephone'] ?></td>
+                <td><?= $client['type_client'] ?></td>
+                <td>
+                    <a href="/client/supprimer/id/<?= $client['id_client'] ?>">
+                        Supprimer
+                    </a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+
+    </table>
+
+</body>
+
+</html>

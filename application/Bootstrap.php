@@ -1,19 +1,30 @@
+
 <?php
 
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
     protected function _initApp()
     {
-        // Initialisation générale de l'application
+        // Initialisation générale
+    }
+
+    protected function _initAutoload()
+    {
+        $autoloader = new Zend_Application_Module_Autoloader(array(
+            'namespace' => 'Application',
+            'basePath'  => APPLICATION_PATH
+        ));
+
+        return $autoloader;
     }
 
     protected function _initDatabase()
     {
-        // Récupération de la connexion à la base de données
         $db = $this->getPluginResource('db')->getDbAdapter();
 
-        // Vérification de la connexion
         $db->getConnection();
+
+        Zend_Registry::set('db', $db);
 
         return $db;
     }
