@@ -1,4 +1,3 @@
-
 <?php
 
 class Application_Model_Client
@@ -25,4 +24,11 @@ class Application_Model_Client
             'id_client = ' . (int) $id
         );
     }
+
+    // Ajouter un client
+    public function addClient($data)
+    {
+        return $this->_db->insert('clients', $data);
+    }
+    //Modifier un client
 }
