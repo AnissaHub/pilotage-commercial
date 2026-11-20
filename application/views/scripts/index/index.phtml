@@ -1,0 +1,24 @@
+<div id="ca-chart"></div>
+
+
+<?php
+$moisNoms = array(
+    1 => 'Janvier',
+    2 => 'Février',
+    3 => 'Mars',
+    4 => 'Avril'
+);
+
+$categories = array();
+$montants = array();
+
+foreach ($this->chiffreAffaires as $ligne) {
+    $categories[] = $moisNoms[(int) $ligne['mois']];
+    $montants[] = (float) $ligne['chiffre_affaires'];
+}
+
+?>
+<script>
+    const categories = <?php echo json_encode($categories); ?>;
+    const montants = <?php echo json_encode($montants); ?>;
+</script>

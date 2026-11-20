@@ -6,15 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BankBusiness - Pilotage commercial</title>
     <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 
 <body>
-
     <?php
+
     // Récupérer le contrôleur actuel
     $controller = Zend_Controller_Front::getInstance()
         ->getRequest()
         ->getControllerName();
+
+    // Définir le titre selon le contrôleur
+    if ($controller == 'index') {
+        $pageTitle = 'Tableau de bord';
+    } elseif ($controller == 'client') {
+        $pageTitle = 'Gestion des clients';
+    } else {
+        $pageTitle = 'BankBusiness';
+    }
+
     ?>
 
     <div class="app-container">
@@ -27,18 +38,32 @@
             </div>
 
             <nav class="sidebar-nav">
+
                 <ul>
                     <li>
-                        <a href="/index/index" class="active">Clients</a>
+                        <a href="/index/index"
+                            class="<?php echo ($controller == 'index') ? 'active' : ''; ?>">
+                            Tableau de bord
+                        </a>
                     </li>
 
-                    <li><a href="/index/index">Tableau de bord</a></li>
-                    <li><a href="/client/index">Clients</a></li>
-                    <li><a href="/vente/index">Ventes</a></li>
-                    <li><a href="/commercial/index">Commerciaux</a></li>
-                    <li><a href="/objectif/index">Objectifs</a></li>
-                    <li><a href="/reporting/index">Reporting</a></li>
+                    <li>
+                        <a href="/client/index"
+                            class="<?php echo ($controller == 'client') ? 'active' : ''; ?>">
+                            Clients
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/vente/index"
+                            class="<?php echo ($controller == 'vente') ? 'active' : ''; ?>">
+                            Ventes
+                        </a>
+                    </li>
+
+
                 </ul>
+
             </nav>
 
         </aside>
@@ -49,7 +74,7 @@
 
             <!-- Barre supérieure -->
             <header class="topbar">
-                <h1>Tableau de bord</h1>
+                <h1><?php echo $pageTitle; ?></h1>
                 <span>Espace commercial</span>
             </header>
 
@@ -64,6 +89,8 @@
 
 
     </div>
+    <!-- Charger le code JavaScript de notre tableau de bord -->
+    <script src="/js/dashboard.js"></script>
 
 </body>
 
