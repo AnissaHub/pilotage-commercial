@@ -1,0 +1,40 @@
+<h1>Ajouter un nouveau client</h1>
+
+<form action="/client/ajouter" method="POST">
+
+    <p>
+        <label>Nom :</label><br>
+        <input type="text" name="nom" required>
+    </p>
+
+    <p>
+        <label>Prénom :</label><br>
+        <input type="text" name="prenom" required>
+    </p>
+
+    <p>
+        <label>Email :</label><br>
+        <input type="email" name="email" required>
+    </p>
+
+    <p>
+        <label>Téléphone :</label><br>
+        <input type="text" name="telephone">
+    </p>
+
+    <p>
+        <label>Type de client :</label><br>
+        <select name="type_client" required>
+            <option value="">-- Choisir --</option>
+            <option value="Particulier">Particulier</option>
+            <option value="Professionnel">Professionnel</option>
+        </select>
+    </p>
+
+    <button type="submit">Enregistrer le client</button>
+
+</form>
+
+<p>
+    <a href="/client/index">Retour à la liste des clients</a>
+</p>
